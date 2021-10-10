@@ -1,14 +1,15 @@
-import React, { Fragment } from "react";
-import testImg from "./images/242272231_418455083318600_3757074829255949569_n.png";
+import React, { Suspense } from "react";
+import { Route, Router } from "react-router";
 
 const App = () => {
+  const clicker = () => {
+    return "this is a clicker";
+  };
+
   return (
-    <Fragment>
-      <div>
-        <h1>test</h1>
-      </div>
-      <img className="img-test" src={testImg} alt="" />
-    </Fragment>
+    <Router>
+      <Suspense></Suspense>
+    </Router>
   );
 };
 
