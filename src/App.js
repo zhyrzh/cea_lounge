@@ -1,15 +1,14 @@
 import React, { Suspense } from "react";
-import { Route, Router } from "react-router";
+import { Route, Router, Switch } from "react-router";
+
+// Pages
+import Home from "./components/Home/index";
 
 const App = () => {
-  const clicker = () => {
-    return "this is a clicker";
-  };
-
   return (
-    <Router>
-      <Suspense></Suspense>
-    </Router>
+    <Switch>
+      <Route path="/" exact component={Home} />
+    </Switch>
   );
 };
 
