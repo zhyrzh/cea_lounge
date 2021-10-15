@@ -13,6 +13,7 @@ module.exports = merge(common, {
     filename: "js/[name].[contenthash].js",
     assetModuleFilename: "assets/[hash][ext][query]",
     clean: true,
+    publicPath: "/",
   },
   module: {
     rules: [

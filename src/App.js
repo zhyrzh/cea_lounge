@@ -1,14 +1,18 @@
-import React, { Suspense } from "react";
-import { Route, Router, Switch } from "react-router";
+import React, { Fragment } from "react";
+import { Route, Switch } from "react-router";
 
 // Pages
-import Home from "./components/Home/index";
+import Home from "./components/Home";
+import SearchResult from "./components/SearchResult";
 
 const App = () => {
   return (
-    <Switch>
-      <Route path="/" exact component={Home} />
-    </Switch>
+    <Fragment>
+      <Switch>
+        <Route exact path="/res" component={SearchResult} />
+        <Route path="/" exact component={Home} />
+      </Switch>
+    </Fragment>
   );
 };
 
