@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Axios from "../../utils/axios";
+import Axios from "../../utils/API";
 
 const index = () => {
   const [questionDetails, setQuestionDetails] = useState({
@@ -13,7 +13,7 @@ const index = () => {
 
   const onChangeHandler = (event) => {
     setQuestionDetails((prevState) => ({
-      prevState,
+      ...prevState,
       [event.target.name]: event.target.value,
     }));
   };
