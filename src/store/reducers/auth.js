@@ -19,6 +19,7 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
         user: null,
+        isAuthenticated: payload.loggedIn,
       };
     default:
       return state;

@@ -3,17 +3,15 @@ const { merge } = require("webpack-merge");
 const common = require("./webpack.common");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtract = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const path = require("path");
 
 module.exports = merge(common, {
-  mode: "development",
+  mode: "production",
   output: {
+    path: path.resolve(__dirname, "../build"),
     filename: "js/[name].[contenthash].js",
     assetModuleFilename: "assets/[hash][ext][query]",
-    clean: true,
-    publicPath: "/",
   },
   module: {
     rules: [
@@ -21,14 +19,7 @@ module.exports = merge(common, {
         test: /\.(scss|css)$/,
         use: [
           MiniCssExtract.loader,
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 2,
-              sourceMap: false,
-              modules: true,
-            },
-          },
+          "css-loader",
           "postcss-loader",
           "sass-loader",
         ],
@@ -39,11 +30,9 @@ module.exports = merge(common, {
     new CleanWebpackPlugin(),
     new MiniCssExtract({
       filename: "styles/[name].[contenthash].css",
-      chunkFilename: "[id].css",
     }),
   ],
   optimization: {
-    minimize: true,
     minimizer: [new TerserPlugin()],
   },
 });

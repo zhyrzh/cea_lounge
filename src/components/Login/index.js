@@ -23,7 +23,7 @@ const index = () => {
   };
 
   return (
-    <div>
+    <div style={{ marginTop: "10rem" }}>
       <input type="text" name="email" onChange={onChangeHandler} />
       <input type="text" name="password" onChange={onChangeHandler} />
       <button onClick={() => dispatch(login(loginDetails))}>Login</button>
