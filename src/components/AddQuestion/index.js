@@ -23,7 +23,6 @@ const index = () => {
 
   return (
     <div className="add-post-container">
-      {console.log(questions)}
       <h1>Testing</h1>
       <input
         name="title"

@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import AddQuestion from "./components/AddQuestion";
 import Login from "./components/Login";
 import Navbar from "./components/Layout/Navbar";
+import Question from "./components/Question";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/ask" component={AddQuestion} />
+        <Route exact path="/question" component={Question} />
       </Switch>
     </>
   );
