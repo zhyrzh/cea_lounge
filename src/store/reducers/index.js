@@ -1,9 +1,8 @@
 import { combineReducers } from "redux";
 import auth from "./auth";
-
-const initialState = {};
+import question from "./questions";
 
 export default combineReducers({
-  initialState,
   auth,
+  question,
 });

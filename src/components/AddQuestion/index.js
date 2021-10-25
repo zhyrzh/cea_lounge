@@ -1,16 +1,19 @@
-import React, { useState } from "react";
-import Axios from "../../utils/API";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addQuestion, getAllQuestion } from "../../store/actions/questions";
 
 const index = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllQuestion());
+  }, []);
+
   const [questionDetails, setQuestionDetails] = useState({
     title: "",
     question: "",
   });
 
-  const submitQuestion = () => {
-    Axios.post("/question", questionDetails);
-  };
-
+  const questions = useSelector((state) => state.question);
   const onChangeHandler = (event) => {
     setQuestionDetails((prevState) => ({
       ...prevState,
@@ -20,6 +23,7 @@ const index = () => {
 
   return (
     <div className="add-post-container">
+      {console.log(questions)}
       <h1>Testing</h1>
       <input
         name="title"
@@ -33,7 +37,9 @@ const index = () => {
         placeholder="question"
         onChange={onChangeHandler}
       />
-      <button>Submit</button>
+      <button onClick={() => dispatch(addQuestion(questionDetails))}>
+        Submit
+      </button>
       <button>Cancel</button>
     </div>
   );
