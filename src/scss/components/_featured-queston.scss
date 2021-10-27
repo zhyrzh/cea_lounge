@@ -1,0 +1,22 @@
+.featured-question {
+  width: 37.3rem;
+  padding: 1.2rem;
+  height: 20.7rem;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0px 0px 8px #f35066;
+  border-radius: 10px;
+  &__title {
+    width: 29.9rem;
+  }
+
+  &__top-section {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+
+  &__bottom-section {
+    margin-top: 7rem;
+  }
+}

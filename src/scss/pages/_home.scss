@@ -7,16 +7,15 @@
   gap: 3rem;
   grid-template-columns: repeat(12, 1fr);
   max-width: 140rem;
-  min-height: 100vh;
+  min-height: 50vh;
   margin: 0 auto;
 }
 
 .home-content {
   grid-column-start: 4;
   grid-column-end: 10;
-
   background-color: transparent;
-  padding-top: 25rem;
+  padding-top: 14rem;
 }
 
 .banner-text {
@@ -88,5 +87,16 @@
     &:hover {
       cursor: pointer;
     }
+  }
+}
+
+.featured-questions {
+  height: 50vh;
+  background-color: #fff;
+  &__container {
+    max-width: 144rem;
+    padding: 0 2rem;
+    margin: 0 auto;
+    display: flex;
   }
 }
