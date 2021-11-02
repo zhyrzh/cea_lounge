@@ -92,11 +92,20 @@
 
 .featured-questions {
   height: 50vh;
+  padding-top: 3rem;
   background-color: #fff;
   &__container {
     max-width: 144rem;
     padding: 0 2rem;
     margin: 0 auto;
     display: flex;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    color: $pink200;
+    text-align: center;
   }
 }

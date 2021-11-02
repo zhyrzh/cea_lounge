@@ -26,6 +26,7 @@ const Home = () => {
         </div>
       </div>
       <div className="featured-questions">
+        <h1 className="featured-questions__title">Featured Questions</h1>
         <div className="featured-questions__container">
           <div className="featured-question">
             <div className="featured-question__top-section">
