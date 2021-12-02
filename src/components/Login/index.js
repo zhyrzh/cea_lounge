@@ -9,7 +9,7 @@ const index = () => {
     password: "",
   });
   const dispatch = useDispatch();
-  const isAuthenticated = useSelector((state) => state.auth).isAuthenticated;
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   if (isAuthenticated) {
     return <Redirect to="/" />;
@@ -24,6 +24,7 @@ const index = () => {
 
   return (
     <div style={{ marginTop: "10rem" }}>
+      {console.log(isAuthenticated, "is logged in?")}
       <input type="text" name="email" onChange={onChangeHandler} />
       <input type="text" name="password" onChange={onChangeHandler} />
       <button onClick={() => dispatch(login(loginDetails))}>Login</button>
